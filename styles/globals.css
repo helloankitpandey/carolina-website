@@ -26,3 +26,120 @@ body {
     cursor: none;
   }
 }
+
+@keyframes neon-flicker {
+  /* Stable state - mostly on */
+  0%, 15%, 20%, 23%, 50%, 55%, 58%, 95%, 100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    text-shadow:
+      0 0 8px rgba(10, 102, 255, 0.8),
+      0 0 18px rgba(0, 255, 243, 0.6),
+      0 0 35px rgba(10, 102, 255, 0.7);
+  }
+  /* Brief "off" moments */
+  16%, 21%, 24%, 51%, 56%, 59% {
+    opacity: 0.15;
+    transform: translate(0.3px, -0.2px) scale(0.99);
+    text-shadow:
+      0 0 2px rgba(10, 102, 255, 0.3),
+      0 0 4px rgba(10, 102, 255, 0.2);
+  }
+  /* Rapid micro-flickers (glitch cluster) */
+  17%, 18%, 19%, 52%, 53%, 54% {
+    opacity: 0.85;
+    transform: translate(-0.2px, 0.3px) scale(1.01);
+    text-shadow:
+      0 0 12px rgba(10, 102, 255, 1),
+      0 0 25px rgba(0, 255, 243, 0.9),
+      0 0 45px rgba(10, 102, 255, 1);
+  }
+  /* Subtle jitter moments */
+  5%, 10%, 30%, 40%, 70%, 80% {
+    opacity: 0.95;
+    transform: translate(0.1px, -0.1px) scale(1.005);
+    text-shadow:
+      0 0 9px rgba(10, 102, 255, 0.85),
+      0 0 20px rgba(0, 255, 243, 0.65),
+      0 0 38px rgba(10, 102, 255, 0.75);
+  }
+}
+
+@keyframes neon-spark {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  30% {
+    transform: translateY(8px) translateX(2px) scale(0.95);
+    opacity: 0.8;
+    filter: blur(0.5px);
+  }
+  60% {
+    transform: translateY(20px) translateX(4px) scale(0.85);
+    opacity: 0.5;
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(45px) translateX(6px) scale(0.7);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+.neon-flicker {
+  animation: neon-flicker 4.2s infinite;
+}
+
+.neon-spark {
+  animation: neon-spark 2s infinite;
+}
+
+.neon-spark:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.neon-spark:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.neon-spark:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.neon-spark:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.neon-spark:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.neon-spark:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.neon-spark:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.neon-spark:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-flicker {
+    animation: none;
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    text-shadow:
+      0 0 8px rgba(10, 102, 255, 0.8),
+      0 0 18px rgba(0, 255, 243, 0.6),
+      0 0 35px rgba(10, 102, 255, 0.7);
+  }
+  .neon-spark {
+    animation: none;
+    display: none;
+  }
+}

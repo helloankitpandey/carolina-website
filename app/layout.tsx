@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import HeaderWrapper from "@/components/HeaderWrapper";
 import NeonCursor from "@/components/NeonCursor";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import "@/styles/globals.css";
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={`${primaryFont.variable} ${monoFont.variable} bg-black text-neutral-100 antialiased`}>
         <div className="flex min-h-screen flex-col bg-black">
           <NeonCursor />
-          <Header />
+          <HeaderWrapper />
           <main className="w-full flex-1">{children}</main>
           <section className="mx-auto w-full max-w-5xl px-4 pb-8">
             <NewsletterSignup />
