@@ -44,6 +44,30 @@ export const menuItems: MenuItem[] = [
     description: "Citrus curd, candied hibiscus, sable crust.",
     price: "$14",
   },
+  {
+    id: "greek-salad",
+    name: "Greek Salad",
+    category: "Starters",
+    description:
+      "Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.",
+    price: "$25.50",
+  },
+  {
+    id: "lasagne",
+    name: "Lasagne",
+    category: "Main Course",
+    description:
+      "Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.",
+    price: "$40.00",
+  },
+  {
+    id: "butternut-pumpkin",
+    name: "Butternut Pumpkin",
+    category: "Starters",
+    description:
+      "Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.",
+    price: "$10.00",
+  },
 ];
 
 export const products: Product[] = [
