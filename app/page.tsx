@@ -36,10 +36,27 @@ export default function HomePage() {
            --------------------------- */}
         <header className="relative z-30 px-4 py-3 sm:px-6 lg:px-16">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">
-            <Link href="/" className="flex items-center gap-3 lg:hidden">
+            {/* <Link href="/" className="flex items-center gap-3 lg:hidden">
               <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-emerald-300 shadow-[0_8px_30px_rgba(10,102,255,0.12)]" />
               <span className="hidden font-semibold text-white sm:block">Carolina</span>
-            </Link>
+            </Link> */}
+
+            <div className="mb-4 block md:hidden">
+                <div className="relative select-none text-left">
+                  <span
+                    className="neon-flicker text-2xl font-bold tracking-[0.12em] uppercase text-white"
+                    style={{
+                      fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+                      textShadow: "0 0 8px rgba(10,102,255,0.8), 0 0 18px rgba(0,255,243,0.6)",
+                    }}
+                  >
+                    CAROLINA
+                  </span>
+                  <div className="mt-0 text-[8px] tracking-[0.18em] uppercase text-green-400" style={{ textShadow: "0 0 4px rgba(74,222,128,0.5)" }}>
+                    LUMINARY LOUNGE
+                  </div>
+                </div>
+              </div>
 
             {/* Desktop nav kept hidden here (we will render the original laptop header below for lg) */}
             <nav className="hidden items-center gap-6 text-xs sm:flex sm:text-sm text-neutral-100/80 lg:hidden">
@@ -154,8 +171,8 @@ export default function HomePage() {
             =========================== */}
         <div className="lg:hidden relative z-20 flex min-h-[calc(100vh-64px)] flex-col justify-between px-4 pb-12 pt-6 sm:pb-20 sm:pt-8 md:px-8 lg:px-16">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 sm:gap-8 md:flex-row md:items-start">
-            <div className="w-full max-w-xl pt-2 sm:pt-6 md:pt-10 lg:pt-14">
-              <div className="mb-4 block md:hidden">
+            <div className="w-full pb-10 max-w-xl pt-2 sm:pt-6 md:pt-10 lg:pt-14">
+              {/* <div className="mb-4 block md:hidden">
                 <div className="relative select-none text-left">
                   <span
                     className="neon-flicker text-2xl font-bold tracking-[0.12em] uppercase text-white"
@@ -170,7 +187,7 @@ export default function HomePage() {
                     LUMINARY LOUNGE
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.45em] text-neon-teal mb-2 sm:mb-3">
                 The most
@@ -191,7 +208,7 @@ export default function HomePage() {
                 performances that glow long after midnight.
               </p>
 
-              <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <div className="flex w-full flex-col pt-20 mt-20 gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <NeonButton
                   className="w-full border border-neon-pink/80 bg-black/40 px-6 py-3 text-sm sm:text-base font-semibold uppercase tracking-[0.32em] text-neon-pink shadow-[0_0_25px_rgba(255,75,255,0.22)] transition hover:border-neon-pink hover:bg-neon-pink/15 hover:text-white sm:w-auto"
                   href="/menu"
