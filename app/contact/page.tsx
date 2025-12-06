@@ -238,19 +238,6 @@ export default function ContactPage() {
         </aside>
       </main>
 
-      <div className="max-w-4xl mx-auto mt-10">
-        <div className="rounded-full border border-white/8 bg-black/20 p-3 px-4 flex items-center gap-3">
-          <input
-            className="flex-1 rounded-full bg-black/10 px-4 py-2 placeholder:text-neutral-400 text-white"
-            placeholder="Join the newsletter"
-            aria-label="Join the newsletter"
-          />
-          <button className="rounded-full bg-gradient-to-r from-blue-600 to-emerald-400 px-4 py-2 text-black font-semibold">
-            Subscribe
-          </button>
-        </div>
-      </div>
-
       {toast && (
         <div
           role="status"
