@@ -61,8 +61,8 @@ export default function NeonCursor() {
       }}
     >
       <div
-        className={`h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-teal/70 blur-[6px] transition-all duration-200 ${
-          active ? "scale-150 opacity-90 shadow-[0_0_25px_rgba(75,225,255,0.8)]" : "opacity-60"
+        className={`h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-teal/90 blur-[6px] transition-all duration-200 ${
+          active ? "scale-150 opacity-90 shadow-[0_0_25px_rgba(75,225,255,0.8)]" : "opacity-100"
         }`}
       />
     </div>
