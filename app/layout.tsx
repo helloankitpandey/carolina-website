@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <HeaderWrapper />
           <main className="w-full flex-1">{children}</main>
           <section className="mx-auto w-full max-w-5xl px-4 pb-8">
-            <NewsletterSignup />
+            {/* <NewsletterSignup /> */}
           </section>
           <Footer />
         </div>

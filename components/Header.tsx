@@ -7,6 +7,7 @@ const primaryNav = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
   { href: "/events", label: "Events" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/reservations", label: "Reservations" },
   { href: "/contact", label: "Contact" },
 ];

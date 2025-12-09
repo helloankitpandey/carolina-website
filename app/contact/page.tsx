@@ -1,6 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
+
+const MAP_IMAGE = "/map-blue.png"; // put the image at public/decoration/map-blue.png
+const MAP_LINK = "https://maps.app.goo.gl/vW3wwN5AYYPfJE296";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -45,7 +49,7 @@ export default function ContactPage() {
 
   return (
     <div className="relative px-4 sm:px-6 md:px-10 pb-20 max-w-6xl mx-auto">
-
+      {/* decorative orbs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-24 -top-16 h-[240px] w-[240px] rounded-full bg-blue-600/20 blur-3xl" />
         <div className="absolute -right-24 bottom-8 h-[200px] w-[200px] rounded-full bg-emerald-500/12 blur-3xl" />
@@ -63,7 +67,7 @@ export default function ContactPage() {
       </header>
 
       <main className="grid gap-8 lg:gap-12 md:grid-cols-2 items-start">
-
+        {/* FORM SECTION */}
         <section aria-labelledby="contact-form-heading" className="order-2 md:order-1">
           <div className="rounded-2xl border border-white/8 bg-black/30 backdrop-blur-md p-5 sm:p-8">
             <h2 id="contact-form-heading" className="text-lg font-semibold text-white">
@@ -169,6 +173,7 @@ export default function ContactPage() {
           </div>
         </section>
 
+        {/* ASIDE: Contact card + map image */}
         <aside className="order-1 md:order-2">
           <div className="rounded-2xl border border-white/8 bg-black/20 backdrop-blur-md p-5 sm:p-6 space-y-4">
             <h3 className="text-lg font-semibold text-white">Visit & Contact</h3>
@@ -203,15 +208,66 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-2xl overflow-hidden border border-white/8">
-            <iframe
-              title="Carolina location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0196080281587!2d-122.4194152846812!3d37.77492927975978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e0a4febc0af%3A0x6b0f7d6b65b8f1b4!2sSome%20Restaurant!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
-              className="w-full h-56 md:h-64"
-              loading="lazy"
-            />
+          {/* neon circular map image (replaces iframe) */}
+          <div className="mt-6 flex items-center justify-center">
+            <a
+              href={MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Carolina Rooftop Location in Google Maps"
+              className="group"
+            >
+              <div
+                className="relative h-[220px] w-[220px] sm:h-[300px] sm:w-[300px] mx-auto rounded-full overflow-hidden border-2 border-neon-teal/30 shadow-[0_12px_45px_rgba(75,225,255,0.06)] transition-transform hover:scale-[1.03]"
+                role="img"
+                aria-hidden={false}
+              >
+                <Image
+                  src={MAP_IMAGE}
+                  alt="Carolina Rooftop location (click to open Google Maps)"
+                  fill
+                  sizes="(max-width: 640px) 220px, 300px"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* neon overlay */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  aria-hidden
+                  style={{
+                    background:
+                      "radial-gradient(circle at 25% 25%, rgba(75,225,255,0.06), transparent 15%), radial-gradient(circle at 80% 80%, rgba(255,75,200,0.03), transparent 12%)",
+                  }}
+                />
+
+                {/* center pin */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none">
+                  <span
+                    className="block rounded-full bg-neon-teal"
+                    style={{
+                      width: 18,
+                      height: 18,
+                      boxShadow: "0 0 10px rgba(75,225,255,0.9), 0 0 18px rgba(75,225,255,0.45)",
+                    }}
+                  />
+                  <span
+                    className="absolute block rounded-full bg-white"
+                    style={{
+                      width: 8,
+                      height: 8,
+                      boxShadow: "0 0 6px rgba(255,255,255,0.85)",
+                    }}
+                  />
+                </div>
+
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/50 text-xs text-neutral-100 backdrop-blur">
+                  View on Google Maps
+                </div>
+              </div>
+            </a>
           </div>
 
+          {/* social icons */}
           <div className="mt-6 flex items-center gap-3">
             <a
               href="#"
@@ -238,6 +294,7 @@ export default function ContactPage() {
         </aside>
       </main>
 
+      {/* toast */}
       {toast && (
         <div
           role="status"

@@ -4,7 +4,7 @@ const exploreLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/private-hire", label: "Services" },
-  { href: "/events", label: "Eventes" },
+  { href: "/events", label: "Events" },
   { href: "/contact", label: "Contact" },
 ];
 
